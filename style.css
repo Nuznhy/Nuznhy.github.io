@@ -1,382 +1,128 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
-*{
-    padding: 0px;
-    margin: 0px;  
-}
-.container{
-	display: grid;
-	grid-template-columns: 1fr auto 1fr;
-	grid-template-rows: [header] 100px [intro] 700px [quote] 550px [cards] 785px [footer] 246px;
-}
-.header_wrapper{
-	grid-column: 1 / span 3;
-	grid-row: 1 / 1;
-	display: grid; 
-}
-.intro_wrapper{
-	grid-column: 1 / span 3;
-	grid-row: 2 / span 1;
-	background-color: #6DA6FD;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-.quote_wrapper{
-	grid-column: 1 / span 3;
-	grid-row: 3 / span 1;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-.cards_wrapper{
-	grid-column: 1 / span 3;
-	grid-row: 4 / span 1;
-	background-color: #B7D7F7;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-.footer_wrapper{
-	grid-column: 1 / span 3;
-	grid-row: 5 / span 1;
-	background-color: #6DA6FD;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+* {
+	padding: 0px;
+	margin: 0px;
 }
 
-.header{
-	display: grid;
-	margin: 0px 135px 0px 135px;
-	grid-template-columns: 1fr 6fr 2fr;
-	grid-column-gap: 30px;
-	grid-template-rows: 100px;
-	vertical-align: center;
-}
-.intro{
-	display: grid;
-	margin: 0px 135px 0px 135px;
-	grid-template-columns: 4fr 5fr;
-	grid-template-rows: 700px;
-	grid-column-gap: 30px;
-	
-}
-.quote{
-	display: grid;
-	margin: 0px 135px 0px 135px;
-	grid-template-columns: 7fr 2fr;
-	grid-column-gap: 30px;
-	grid-template-rows: 500px;
-}
-.cards{
-	display: grid;
-	margin: 0px 135px 0px 135px;
-	grid-template-columns: 3fr 3fr 3fr;
-	grid-template-rows: 785px;
-}
-.footer{
-	display: grid;
-	margin: 0px 135px 0px 135px;
-	grid-template-rows: 80px 110px 56px;
-}
-.number{
-	color: #FFFFFF;
+/* Навигация */
+a {
+	display: block;
+	color: black;
+	text-decoration: none;
+	outline: none;
 }
 
-#menu__checkbox {
-  display: none;
+.topmenu {
+	padding-top: 27px;
 }
 
-nav {
-	background: white;
-  margin: auto;
-}
-nav ul{
+.topmenu > li {
+	display: inline-flex;
+	position: relative;
 	list-style: none;
+	margin-right: 20px;
+}
+
+.topmenu > li:last-child {
+  margin-right: 0;
+}
+
+.topmenu li:last-child a{
+	margin-right: 31px;
+}
+
+.topmenu li a{
+	padding: 10px 20px;
+	
+	width: 130px;
+	height: 46px;
+	text-align: center;
+	background: #A9A9A9;
+}
+
+.submenu {
+	list-style: none;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	width: 100%;
+	z-index: 10;
 	margin: 0;
 	padding: 0;
+	text-align: center;
+
 }
-nav a{
-	outline: none;
-	display: block;
-	transition: .3s ease-in-out;
-  vertical-align: middle;
-}
-.topmenu {
-  text-align: center;
-  padding: 10px 0;
-  font-size: 18px;
-}
-.topmenu > li {
-  display: inline-block;
-  position: relative;
-}
-.topmenu > li:last-child:after {
-  background: none;
-  box-shadow: none;
-}
-.topmenu > li > a {
-  padding: 12px 26px;
-  color: #000000;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-.topmenu li a:hover{ 
-	color: #6DA6FD; 
-}
+
 .submenu {
-  position: absolute;
-  left: 50%;
-  top: 100%;
-  width: 160px;
-  margin-left: -80px;
-  background: #fafafa;
-  border: 1px solid #ededed;
-  z-index: 5;
-  visibility: hidden;
-  opacity: 0;
-  transform: scale(.8);
-  transition: .4s ease-in-out;
+	visibility: hidden;
 }
-.submenu li a {
-  padding: 10px 0;
-  margin: 0 10px;
-  border-top: 2px solid #6DA6FD;
-  font-size: 18px;
-  color: #000000;
+
+.topmenu li:hover .submenu {
+	visibility: visible;
 }
-.topmenu > li:hover .submenu {
-  visibility: visible;
-  opacity: 1;
-  transform: scale(1);
+
+.submenu li {
+	border-bottom: 1px solid;
 }
 
 
-@media screen and (max-width: 1235px) {
-  .topmenu{
-    display: none;
-  }
-
-  .toggle__button{
-    text-align: center;
-    display: block;
-    cursor: pointer;
-    color: #000;
-    margin-top: 20px;
-  }
-
-  .toggle__button:after{
-    content: attr(data-open);
-    display: block;
-  }
-
-  #menu__checkbox:checked + nav[role="navigation"] .topmenu{
-    display: block;
-  }
-  
-  #menu__checkbox:checked + nav[role="navigation"] .toggle__button:after{
-    content: attr(data-close);
-  }
-  .topmenu{
-    position: relative;
-    top: 30px;
-    right:  85px;
-  }
-  .topmenu li{
-    display: flex;
-    background-color: #FFFFFF;
-  }
+/* Слайдер на первой страничке */ 
+.carousel-indicators {
+	margin-top: 0;
+	bottom: auto;
 }
 
-body{
-	font-family: 'Montserrat';
-}
-a {
-	text-decoration: none;
+.carousel-indicators [data-bs-target] {
+	border-radius: 100%;
+	width: 30px;
+	height: 30px;
+	margin-right: 15px;
+	margin-left: 15px;
+	background-color: black;
 }
 
-.logo a img{
-	margin-top: 27px;
+.carousel-caption {
+	position: static;
+	color: black;
 }
-.login{
-	display: flex;
+
+
+/* Размещение текста на Landing */
+.col-4_1, .col-4_2, .col-4_3 {
+	text-align: center;
 	margin: auto;
-}
-.log_sign_in{
-	font-family: 'Montserrat';
-	font-size: 18px;
-	font-weight: bold;
-	color: #FFFFFF;
-	background-color: #6DA6FD;
-	border: none;
-	border-radius: 5px;
-	padding: 10px
+	padding-right: 15px;
+	padding-left: 15px;
 }
 
-.intro_left_content{
-	margin: auto 0;
-}
-.intro_left_content h1{
-	font-weight: bold;
-	font-size: 64px;
-	color: #FFFFFF;
-	margin-bottom: 15px;
-}
-.intro_left_content p{
-	font-weight: bold;
-	font-size: 22px;
-	color: #FFFFFF;
-	border-top: 3px solid #FFFFFF;
-	padding-top: 10px;
-	padding-right: 150px;
-}
-.intro_right_content{
-	position: relative;
-}
-.intro_right_content img{
-	position: absolute;
-	bottom: 0;
-	right: 0;
+.col-4_1 p, .col-4_2 p, .col-4_3 p {
+	text-align: left;
+	padding-right: 15px;
+	padding-left: 15px; 
 }
 
-.col-7{
-	margin: auto 0;
-}
-.col-7 h4{
-	font-size: 22px;
-	padding-bottom: 30px;
-	padding-right: 650px;	
-}
-.qoute_body{
-	font-family: 'Montserrat';
-	font-size: 22px;
-	border-bottom: 1px solid #6da6fd;
-	padding-bottom: 82px;
-	padding-right: 82px;	
-}
-.qoute_author{
-	font-family: 'Montserrat';
-	font-size: 22px;
-	padding-top: 58px;
+/* Размещение контента на ISIC */
+.main_text {
+	margin-top: 36px;
+    column-width: 200px;
+    column-count: 2;
+    column-gap: 30px;
 }
 
-.card{
-	margin: auto;
-	background-color: #FFFFFF;
-	border-radius: 5px;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+.main_text p img {
+	margin-right: 20px;
 }
-.card h2{
-	font-weight: bold;
+
+.head_text {
+	margin-top: 45px;
+}
+
+.head_text h3 {
 	text-align: center;
-	padding-top: 24px;
-	padding-right: -24px;
-}
-.card_text{
-	text-align: center;
-	padding-top: 17px;
-}
-.info{
-	display: flex;
-	justify-content: left;
-	padding: 17px 0px 0px 10px;
-}
-.info_button{
-	justify-content: center;
-	display: flex;
-	margin: 20px 0px;
 }
 
-.footer{
-	justify-content: center;
-	color: #ffffff;
-	text-align: center;
-	font-family: 'Montserrat';
-}
-.call_us, .socials{
-	padding-top: 15px;
-	font-size: 36px;
-	font-weight: bold;
-}
-.adress{
-	font-size: 24px;
-	padding-top: 20px;
+.main_text p img{
+	float: left;
 }
 
 
-@media screen and (max-width: 1420px) {
-	.container{
-		display: grid;
-		grid-template-columns: 1fr auto 1fr;
-		grid-template-rows: 100px 700px 550px 1480px 246px;
-	}
-	.cards_wrapper{
-		grid-column: 1 / span 3;
-		grid-row: 4 / span 1;
-	}
-	.cards{
-		grid-template-rows: 3fr 3fr 3fr;
-		grid-template-columns: auto;
-	}
-	.card{
-		margin-top: 30px;
-	}
-	.footer{
-		grid-template-rows: auto auto auto;
-		grid-template-columns: auto; 
-
-	}
-	.quote{
-		grid-template-rows: auto;
-	}
-	.col-7 h4{
-		padding-top: 30px;
-		padding-right: 450px;
-	}
-}
-
-@media screen and (max-width: 1235px) {
-	.container{
-		display: grid;
-		grid-template-columns: 1fr auto 1fr;
-		grid-template-rows: 100px 1100px 550px 1480px 246px;
-	}
-	.intro{
-		grid-template-columns: auto;
-		grid-template-rows: 450px 650px;
-	}
-	.intro_right_content{
-		grid-row: 2 / span 1;
-	}
-	.intro_right_content img{
-		margin: auto;
-	}
-	.call_us, .socials{
-		padding-top: 10px;
-		font-size: 18px;
-	}
-	.adress{
-		font-size: 12px;
-		padding-top: 15px;
-	}
-}
-
-
-@media screen and (max-width: 690px) {
-	.container{
-		grid-template-columns: auto;
-	}
-
-	.intro_left_content h1{
-		font-size: 36px;
-	}
-	.intro_left_content p{
-		font-size: 16px;
-	}
-	.intro_right_content img{
-		margin: 0 auto;
-	}
-
-	.qoute_body{
-		font-size: 14px;
-		padding-right: 90px;	
-	}
-	.qoute_author{
-		font-family: 'Montserrat';
-		font-size: 16px;
-		padding-top: 58px;
-	}
-}
+.

@@ -1,0 +1,134 @@
+.container_main {
+	display: grid;
+	height: 100%;
+	grid-template-columns: 1fr 24fr 1fr;
+	grid-template-rows: 100px 1fr 100px;
+}
+
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+}
+
+.header_wrapper {
+	background: #C4C4C4;
+	display: grid;
+	height: 100px;
+	margin-bottom: 90px;
+	grid-template-columns: 1fr auto;
+	grid-column: 1 / span 3;
+	grid-row: 1 / span 1;
+}
+
+.nav_bar {
+	grid-column: 1 / span 3;
+	grid-row: 1 / span 1;
+	background: #C4C4C4;
+}
+
+.nav_bar_logo_wrapper {
+	grid-column: 1 / span 1;
+	padding-top: 20px;
+	padding-left: 31px;
+}
+
+.menu_wrapper {
+	grid-column: 2 / span 1;
+}
+
+.main_content_wrapper_landing { 
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: auto auto;
+	grid-column: 2 / span 1;
+	grid-row: 2 / span 1;
+	margin-top: 90px;
+}
+
+.slider_wrapper { 
+	grid-column: 1 / span 3;
+	grid-row: 1 / span 1;
+	margin: 0 50px 0 50px;
+	padding-bottom: 100px;
+}
+
+.col-4_1 {
+	grid-column: 1 / span 1;
+}
+
+.col-2_1 {
+	grid-column: 2 / span 1;
+}
+
+.col-3_1 {
+	grid-column: 3 / span 1;
+}
+
+.main_content_wrapper_ISIC {
+	display: grid;
+	grid-template-columns: auto, auto;
+	grid-template-rows: 1fr auto;
+	grid-column: 2 / span 1;
+	grid-row: 2 / span 1
+}
+
+.main_content_wrapper_news {
+	grid-column: 2 / span 1;
+	grid-row: 2 / span 1
+}
+
+.main_content_wrapper_contacts {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-column: 2 / span 1;
+	grid-row: 2 / span 1;
+	margin-top: 30px;
+}
+
+.list_left_wrapper {
+	grid-column: 1 / span 1;
+	text-align: center;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+}
+
+
+.list_left ul {
+	display: inline-block;
+}
+
+.image_right {
+	grid-column: 2 / span 1;
+}
+
+.main_content_wrapper_president {
+	display: grid;
+	grid-template-rows: auto auto;
+	grid-column: 2 / span 1;
+	grid-row: 2 / span 1
+}
+
+.cards_wrapper {
+	display: grid;
+	grid-template-rows: auto auto auto;
+	grid-template-columns: auto auto auto;
+	grid-column: 2 / span 1;
+	grid-row: 2 / span 1
+}
+
+
+.footer_wrapper {
+ /*TODO*/
+ 	grid-column: 1 / span 3;
+	grid-row: 3 / span 1;
+	position:static;Rf
+	bottom: 0;
+	width: 100%;
+	background: #C4C4C4;
+	height: 100px;
+	margin-top: 50px;
+}
+
